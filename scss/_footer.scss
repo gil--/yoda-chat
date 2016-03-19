@@ -1,0 +1,25 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+
+  button {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+
+      * {
+        stroke: $c-yoda-green;
+      }
+    }
+  }
+}

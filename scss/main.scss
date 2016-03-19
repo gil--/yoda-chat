@@ -1,0 +1,30 @@
+@import "vendor/normalize";
+@import "vendor/animate";
+@import "var";
+@import "mixins";
+@import "header";
+@import "footer";
+@import "stars";
+@import "messages";
+@import "credits";
+@import "yoda";
+
+body {
+  min-height: 100vh;
+  color: $c-yoda-green;
+  background: linear-gradient(0deg, #000000, #04050A 90%) no-repeat black;
+  overflow-x: hidden;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+input:-moz-placeholder {
+  color: white;
+}
+
+.button__transparent {
+  background: transparent;
+  border: 0;
+}

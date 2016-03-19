@@ -1,0 +1,35 @@
+.yoda {
+  height: 75px;
+  width: 150px;
+  margin-bottom: 30px;
+  animation-duration: 2s;
+  animation-name: floating-yoda;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function:linear;
+  animation-fill-mode:forwards;
+  transform: translateY(15px);
+  transition: all 1s;
+  opacity: 0;
+
+  &.js-show-yoda {
+    opacity: 1;
+  }
+
+  @include bp(min-width, $bp-medium + 1) {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    margin-right: 10px;
+  }
+
+  * {
+    fill: $c-yoda-green;
+  }
+}
+
+@keyframes floating-yoda {
+  to{
+    transform:translateY(10px);
+  }
+}

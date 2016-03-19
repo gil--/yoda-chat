@@ -1,0 +1,92 @@
+
+.messages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  padding: 10px;
+  font-family: 'News Cycle', sans-serif;
+  list-style: none;
+  z-index: 1000;
+
+  li {
+    display: flex;
+    margin-bottom: 10px;
+    transition: all .1s;
+
+    &.messages__msg--sent {
+      justify-content: flex-end;
+
+      .msg {
+        border-bottom-right-radius: 2px;
+      }
+    }
+
+    &.messages__msg--reply .msg {
+      color: $c-forest-green;
+      background-color: $c-yoda-green;
+      border-bottom-left-radius: 2px;
+    }
+
+    &.msg__loading {
+      display: none;
+
+      .msg {
+        width: 50px;
+      }
+
+      svg {
+        width: 50px;
+        height: 50px;
+
+        * {
+          stroke: $c-forest-green;
+        }
+      }
+    }
+
+    &.js-msg-hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.js-msg-show {
+      display: block;
+    }
+
+    .msg {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 10px 30px;
+      font-size: 24px;
+      color: $c-starwars-gold;
+      background-color: #42423D;
+      border-radius: 36px;
+
+      @include bp(min-width, $bp-medium + 1) {
+        max-width: 50%;
+      }
+    }
+
+    &.messageInput .msg {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    input[type="text"] {
+      width: 275px;
+      padding: 10px;
+      line-height: 1.5;
+      color: $c-starwars-gold;
+      background-color: #42423D;
+      border: 0;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
