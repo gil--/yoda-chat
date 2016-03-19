@@ -32,7 +32,7 @@
 }
 #stars .layer:nth-child(1) {
 	animation: twinkle 10s ease-in -5s infinite alternate, layer-1 344s linear infinite;
-	background-image: url('https://rogertalk.com/s/stars1.png');
+	background-image: url('/images/stars1.png');
 }
 
 @keyframes layer-2 {
@@ -41,7 +41,7 @@
 }
 #stars .layer:nth-child(2) {
 	animation: twinkle 3s ease-in -3s infinite alternate, layer-2 349s linear infinite;
-	background-image: url('https://rogertalk.com/s/stars2.png');
+	background-image: url('/images/stars2.png');
 }
 
 @keyframes layer-3 {
@@ -50,7 +50,7 @@
 }
 #stars .layer:nth-child(3) {
 	animation: twinkle 3.5s ease-in infinite alternate, layer-3 349s linear infinite;
-	background-image: url('https://rogertalk.com/s/stars3.png');
+	background-image: url('/images/stars3.png');
 }
 
 @keyframes layer-4 {
@@ -59,7 +59,7 @@
 }
 #stars .layer:nth-child(4) {
 	animation: twinkle 4s ease-in -2s infinite alternate, layer-4 240s linear infinite;
-	background-image: url('https://rogertalk.com/s/stars4.png');
+	background-image: url('/images/stars4.png');
 }
 
 @keyframes layer-5 {
@@ -68,7 +68,7 @@
 }
 #stars .layer:nth-child(5) {
 	animation: twinkle 5.5s ease-in infinite alternate, layer-5 243s linear infinite;
-	background-image: url('https://rogertalk.com/s/stars5.png');
+	background-image: url('/images/stars5.png');
 }
 
 @keyframes shooting-star {
@@ -87,7 +87,7 @@
 
 #stars:before {
 	animation: 500ms linear 3s shooting-star;
-	background-image: url('https://rogertalk.com/s/shootingstar.png');
+	background-image: url('/images/shootingstar.png');
 	background-size: 72px 50px;
 	content: ' ';
 	height: 50px;
