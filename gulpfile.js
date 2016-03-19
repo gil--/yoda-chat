@@ -9,8 +9,8 @@ var sass          = require('gulp-sass');
 var scsslint      = require('gulp-scss-lint');
 var sourcemaps    = require('gulp-sourcemaps');
 // ===== JS
-var browserify = require('gulp-browserify');
-// var webpack       = require('webpack-stream');
+var browserify    = require('gulp-browserify');
+var uglify        = require('gulp-uglify');
 // ===== SVG Stuff
 var svgstore      = require('gulp-svgstore');
 var svgmin        = require('gulp-svgmin');
@@ -68,6 +68,7 @@ gulp.task('scripts', function() {
       .pipe(browserify({
   		  insertGlobals : true
   		}))
+      .pipe(uglify())
       .pipe(gulp.dest('./js/dist/'));
 });
 
