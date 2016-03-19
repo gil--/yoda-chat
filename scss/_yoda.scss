@@ -1,4 +1,6 @@
 .yoda {
+  position: absolute;
+  top: -15px;
   height: 75px;
   width: 150px;
   margin-bottom: 30px;
@@ -16,10 +18,9 @@
     opacity: 1;
   }
 
-  @include bp(min-width, $bp-medium + 1) {
-    position: absolute;
-    left: -100px;
+  @include bp(min-width, $bp-large + 1) {
     top: 0;
+    left: -100px;
     margin-right: 10px;
   }
 
