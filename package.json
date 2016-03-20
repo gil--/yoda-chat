@@ -9,11 +9,12 @@
   "author": "gil greenberg",
   "license": "MIT",
   "devDependencies": {
+    "aiml-high": "0.0.8",
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
     "csswring": "^4.2.1",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-cached": "^1.1.0",
     "gulp-postcss": "^6.1.0",
     "gulp-sass": "^2.2.0",
@@ -24,6 +25,9 @@
     "gulp-uglify": "^1.5.3",
     "gulp-watch": "^4.3.5",
     "postcss-assets": "^4.0.1",
-    "postcss-svg": "^1.0.4"
+    "postcss-svg": "^1.0.4",
+    "stringify": "^5.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

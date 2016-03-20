@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp          = require('gulp');
 // ===== Postcss
 var postcss       = require('gulp-postcss');
@@ -9,8 +11,11 @@ var sass          = require('gulp-sass');
 var scsslint      = require('gulp-scss-lint');
 var sourcemaps    = require('gulp-sourcemaps');
 // ===== JS
-var browserify    = require('gulp-browserify');
+var browserify    = require('browserify');
 var uglify        = require('gulp-uglify');
+var source        = require('vinyl-source-stream');
+var buffer        = require('vinyl-buffer');
+var stringify     = require('stringify');
 // ===== SVG Stuff
 var svgstore      = require('gulp-svgstore');
 var svgmin        = require('gulp-svgmin');
@@ -63,13 +68,16 @@ gulp.task('sass', function() {
 /*
  *    Build All JS files
  */
-gulp.task('scripts', function() {
-  return gulp.src('./js/src/index.js')
-      .pipe(browserify({
-  		  insertGlobals : true
-  		}))
-      .pipe(uglify())
-      .pipe(gulp.dest('./js/dist/'));
+
+ gulp.task('scripts', function() {
+  return browserify({ 'entries': ['./js/index.js'] })
+    .transform(stringify, {
+        appliesTo: { includeExtensions: ['.xml'] },
+        minify: true
+    })
+    .bundle()
+    .pipe(source('./js/index.js')) // gives streaming vinyl file object
+    .pipe(gulp.dest('./dist'));
 });
 
 
@@ -96,7 +104,7 @@ gulp.task('bs-reload', function() {
  */
 gulp.task('watch', function() {
     gulp.watch('./scss/**/*.scss', ['sass', 'bs-reload']);
-    gulp.watch('./js/src/**/*.js', ['scripts', 'bs-reload']);
+    gulp.watch('./js/**/*.js', ['scripts', 'bs-reload']);
 });
 
 
