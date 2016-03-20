@@ -1,7 +1,12 @@
+var fs = require('browserify-fs');
+aimlHigh = require('aiml-high');
+var interpreter = new aimlHigh({name:'Master Yoda', age:'900'}, 'Goodbye');
+var yodaAiml = require('../aiml/yoda.aiml.xml');
+interpreter.loadFromString(yodaAiml);
+
 $(document).ready(function () {
 
     $('#messageForm').submit(function( ) {
-      //  playYodaSound(); // Play a Yoda sound
       $('.yoda').addClass('js-show-yoda');
       var message2Yoda = $('#message2Yoda').val();
 
@@ -9,24 +14,36 @@ $(document).ready(function () {
       $('.messageInput').before( '<li class="messages__msg--sent animated fadeInUp"><blockquote class="msg">' + message2Yoda + '</blockquote></li>' );
       $('.msg__loading').addClass('js-msg-show');
 
-      smoothScrollBottom();
+      interpreter.findAnswer(message2Yoda, yodaBotCallback);
 
-        $.ajax({
-            url: 'https://yoda.p.mashape.com/yoda',
-            type: 'GET',
-            data: {sentence: message2Yoda },
-            datatype: 'json',
-            success: function (data) {
-                showResponse(data);
-            },
-            error: function (err) {
-                console.log(err);
-            },
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-Mashape-Authorization", "INSERT MASHAPE KEY HERE");
-            }
-        });
+      smoothScrollBottom();
     });
+
+    function yodaBotCallback(answer, wildCardArray, input) {
+        console.log(answer + ' | ' + wildCardArray + ' | ' + input);
+
+        if(answer == 'I found nothing.') {
+          yoda_answer = "Limited, my responses are.  Ask the right question, you must.  Hmmmmmm."; //replace with random Yoda quote
+
+          showResponse(yoda_answer);
+        } else {
+          $.ajax({
+              url: 'https://yoda.p.mashape.com/yoda',
+              type: 'GET',
+              data: {sentence: answer },
+              datatype: 'json',
+              success: function (data) {
+                  showResponse(data);
+              },
+              error: function (err) {
+                  console.log(err);
+              },
+              beforeSend: function (xhr) {
+                  xhr.setRequestHeader("X-Mashape-Authorization", "KvabR1S411mshQP19qcLAH8SZPHVp1FXBkljsnMGkWUYctty3y");
+              }
+          });
+        }
+    };
 
     function showResponse(data) {
       $('.msg__loading').removeClass('js-msg-show');
@@ -39,6 +56,7 @@ $(document).ready(function () {
         $('.messageInput').removeClass('js-msg-hide');
       }, 750);
     }
+
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      *
@@ -68,7 +86,8 @@ $(document).ready(function () {
             {name: yodaSounds[1]},
             {name: yodaSounds[2]},
             {name: yodaSounds[3]},
-            {name: yodaSounds[4]}
+            {name: yodaSounds[4]},
+            {name: 'republic_credits'}
         ],
 
         // main config
@@ -97,6 +116,7 @@ $(document).ready(function () {
     // Show Credits Modal
     $(document).on('click', '.open-credits', function( ) {
       $('.credits').toggleClass('js-hide').addClass('animated fadeIn');
+      ion.sound.play('republic_credits');
     });
 
     // Hide Credits Modal
