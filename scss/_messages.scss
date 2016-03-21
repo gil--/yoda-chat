@@ -7,7 +7,6 @@
   max-width: 800px;
   margin: 0 auto 50px;
   padding: 10px;
-  font-family: 'News Cycle', sans-serif;
   list-style: none;
   z-index: 1000;
 
@@ -38,8 +37,13 @@
       }
 
       svg {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
+
+        @include bp(min-width, $bp-medium + 1) {
+          width: 50px;
+          height: 50px;
+        }
 
         * {
           stroke: $c-forest-green;
@@ -59,15 +63,18 @@
     .msg {
       display: flex;
       align-items: center;
+      max-width: 90%;
       margin: 0;
       padding: 10px 30px;
-      font-size: 24px;
+      font-size: 16px;
       color: $c-starwars-gold;
       background-color: #42423D;
-      border-radius: 36px;
+      border-radius: 15px;
 
       @include bp(min-width, $bp-medium + 1) {
         max-width: 50%;
+        font-size: 24px;
+        border-radius: 36px;
       }
     }
 
@@ -77,12 +84,16 @@
     }
 
     input[type="text"] {
-      width: 275px;
+      width: 250px;
       padding: 10px;
       line-height: 1.5;
       color: $c-starwars-gold;
       background-color: #42423D;
       border: 0;
+
+      @include bp(min-width, $bp-medium + 1) {
+        width: 275px;
+      }
 
       &:focus {
         outline: 0;

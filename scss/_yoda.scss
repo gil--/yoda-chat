@@ -1,9 +1,8 @@
 .yoda {
-  position: absolute;
-  top: -15px;
+  position: relative;
+  top: -25px;
   height: 75px;
   width: 150px;
-  margin-bottom: 30px;
   animation-duration: 2s;
   animation-name: floating-yoda;
   animation-iteration-count: infinite;
@@ -12,16 +11,18 @@
   animation-fill-mode:forwards;
   transform: translateY(15px);
   transition: all 1s;
-  opacity: 0;
 
   &.js-show-yoda {
     opacity: 1;
   }
 
   @include bp(min-width, $bp-large + 1) {
+    position: absolute;
     top: 0;
     left: -100px;
+    margin-bottom: 30px;
     margin-right: 10px;
+    opacity: 0;
   }
 
   * {
