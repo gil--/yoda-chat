@@ -14,36 +14,45 @@ $(document).ready(function () {
       $('.messageInput').before( '<li class="messages__msg--sent animated fadeInUp"><blockquote class="msg">' + message2Yoda + '</blockquote></li>' );
       $('.msg__loading').addClass('js-msg-show');
 
-      interpreter.findAnswer(message2Yoda, yodaBotCallback);
+      if (message2Yoda.indexOf("/translate") != -1) {
+        var msg = message2Yoda.replace("/translate ", ""); //remove translate command
+        translate2Yoda(msg);
+      } else {
+        interpreter.findAnswer(message2Yoda, yodaBotCallback);
+      }
 
       smoothScrollBottom();
     });
 
     function yodaBotCallback(answer, wildCardArray, input) {
-        console.log(answer + ' | ' + wildCardArray + ' | ' + input);
+        console.log('DEBUG BOT AI:: ' + answer + ' | ' + wildCardArray + ' | ' + input);
 
         if(answer == 'I found nothing.') {
           yoda_answer = "Limited, my responses are.  Ask the right question, you must.  Hmmmmmm."; //replace with random Yoda quote
 
           showResponse(yoda_answer);
         } else {
-          $.ajax({
-              url: 'https://yoda.p.mashape.com/yoda',
-              type: 'GET',
-              data: {sentence: answer },
-              datatype: 'json',
-              success: function (data) {
-                  showResponse(data);
-              },
-              error: function (err) {
-                  console.log(err);
-              },
-              beforeSend: function (xhr) {
-                  xhr.setRequestHeader("X-Mashape-Authorization", "KvabR1S411mshQP19qcLAH8SZPHVp1FXBkljsnMGkWUYctty3y");
-              }
-          });
+          translate2Yoda(answer);
         }
     };
+
+    function translate2Yoda(string) {
+      $.ajax({
+          url: 'https://yoda.p.mashape.com/yoda',
+          type: 'GET',
+          data: {sentence: string },
+          datatype: 'json',
+          success: function (data) {
+              showResponse(data);
+          },
+          error: function (err) {
+              console.log(err);
+          },
+          beforeSend: function (xhr) {
+              xhr.setRequestHeader("X-Mashape-Authorization", "KvabR1S411mshQP19qcLAH8SZPHVp1FXBkljsnMGkWUYctty3y");
+          }
+      });
+    }
 
     function showResponse(data) {
       $('.msg__loading').removeClass('js-msg-show');
