@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+  <category>
+    <pattern>HOW OLD ARE YOU</pattern>
+    <template>Over <bot name="age"/>years old, I am.</template>
+  </category>
+  <category>
+    <pattern>WHO ARE YOU</pattern>
+    <template>
+      <srai>WHAT IS YOUR NAME</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>ARE YOU YODA</pattern>
+    <template>
+      <srai>WHAT IS YOUR NAME</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template><bot name="name"/>, I am.</template>
+  </category>
+  <category>
+    <pattern>TEST *</pattern>
+    <template>Listening to you, I am.  Yes, hmmm.</template>
+  </category>
+  <category>
+    <pattern>I LIKE GIFS</pattern>
+    <template>GIF this: <img src="GIF" /></template>
+  </category>
+  <category>
+    <pattern>DARK SIDE *</pattern>
+    <template>
+      <random>
+        <li><img src="http://i.giphy.com/3o7abrH8o4HMgEAV9e.gif"></li>
+        <li>Resist you must, the dark side.</li>
+        <li>Powerfull, the dark side has become</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>*</pattern>
+    <template>I found nothing.</template>
+  </category>
+</aiml>
