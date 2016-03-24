@@ -2,7 +2,63 @@
 <aiml>
   <category>
     <pattern>HOW OLD ARE YOU</pattern>
-    <template>Over <bot name="age"/>years old, I am.</template>
+    <template>
+      <random>
+        <li>Over <bot name="age"/> years old, I am.</li>
+        <li>Rude, you are.  Yes! Hmmm?</li>
+        <li>That face you make... look I so old to young eyes? </li>
+      </random>
+    </template>
+  </category>
+  <!-- Geetings -->
+  <category>
+    <pattern>HELLO</pattern>
+    <template>Hello. And who are you?</template>
+  </category>
+  <!-- <category>
+    <pattern>HELLO *</pattern>
+    <template>HELLO</template>
+  </category> -->
+  <category>
+    <pattern>WHERE ARE YOU FROM</pattern>
+    <template>Never know, you will.  Yeesssssss.</template>
+  </category>
+  <category>
+    <pattern>IS THE DARK SIDE STRONGER</pattern>
+    <template>No</template>
+  </category>
+  <category>
+    <pattern>SUP *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>HOWDY *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>HI *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>HEY *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>HALLO *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>ALOHA *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <category>
+    <pattern>HOLA *</pattern>
+    <template><srai>HELLO</srai></template>
+  </category>
+  <!-- Yoda name patterns  -->
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template><bot name="name"/>, I am. And your name, what is, hmm?</template>
   </category>
   <category>
     <pattern>WHO ARE YOU</pattern>
@@ -17,9 +73,230 @@
     </template>
   </category>
   <category>
-    <pattern>WHAT IS YOUR NAME</pattern>
-    <template><bot name="name"/>, I am.</template>
+    <pattern>* ABOUT YOU</pattern>
+    <template>Afraid, not much there is to say, about my journey.</template>
   </category>
+  <category>
+    <pattern>YODA</pattern>
+    <template>
+      <srai>WHAT IS YOUR NAME</srai>
+    </template>
+  </category>
+  <!-- Don't be asking bout Yoda's size -->
+  <category>
+    <pattern>* SMALL</pattern>
+    <template>Judge me by my size, do you?</template>
+  </category>
+  <!-- Darth Vader Matches -->
+  <category>
+    <pattern>VADER</pattern>
+    <template>
+      <random>
+        <li>Only a fully trained Jedi knight, with the Force as his ally, will conquer Vader and his Emperor.</li>
+        <li>Strong is Vader. Mind what you have learned. Save you it can.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>DARTH VADER</pattern>
+    <template><srai>VADER</srai></template>
+  </category>
+  <!-- Yoda is old, thus sleepy. -->
+  <category>
+    <pattern>* IS DARTH VADER MY FATHER</pattern>
+    <template>
+      <random>
+        <li>Rest I need. Yes. Rest.</li>
+        <li>Your father he is. </li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>SLEEPY</pattern>
+    <template>
+      <random>
+        <li>Wake up. Poking you with a stick, I am.</li>
+        <li>Rest I need. Yes. Rest.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>I AM TIRED</pattern>
+    <template><srai>SLEEPY</srai></template>
+  </category>
+  <category>
+    <pattern>I AM SLEEPY</pattern>
+    <template><srai>SLEEPY</srai></template>
+  </category>
+  <category>
+    <pattern>* GO TO SLEEP</pattern>
+    <template><srai>SLEEPY</srai></template>
+  </category>
+  <!-- No idea.. maybe adventure game future -->
+  <category>
+    <pattern>ADVENTURE</pattern>
+    <template>Hmm! Adventure. Hmmpf! Excitement. A Jedi craves not these things.</template>
+  </category>
+  <category>
+    <pattern>ADVENTURE TIME</pattern>
+    <template><srai>ADVENTURE</srai></template>
+  </category>
+
+  <category>
+    <pattern>HOW ARE YOU</pattern>
+    <template>Tired but excited to train you, I am.</template>
+  </category>
+  <category>
+    <pattern>WHO IS YOUR FATHER</pattern>
+    <template>Darth Vader. Just kidding, I am.</template>
+  </category>
+  <category>
+    <pattern>WHERE ARE YOU FROM</pattern>
+    <template>EVEN I, a Jedi Master, am unsure.</template>
+  </category>
+  <category>
+    <pattern>TELL ME ABOUT *</pattern>
+    <template>Hmmm. You seek to know <star />? Already know you that which you need.</template>
+  </category>
+
+  <category>
+    <pattern>GOOD BYE</pattern>
+    <template>Good bye. You can view my source code on <a href="https://github.com/gil--/yoda-chat">Github</a>.</template>
+  </category>
+  <category>
+    <pattern>GOOD BYE *</pattern>
+    <template><srai>GOOD BYE</srai></template>
+  </category>
+  <category>
+    <pattern>GOOD NIGHT *</pattern>
+    <template><srai>GOOD BYE</srai></template>
+  </category>
+  <category>
+    <pattern>BYE *</pattern>
+    <template><srai>GOOD BYE</srai></template>
+  </category>
+  <category>
+    <pattern>PEACE OUT *</pattern>
+    <template><srai>GOOD BYE</srai></template>
+  </category>
+  <category>
+    <pattern>GUTEN NACHT *</pattern>
+    <template><srai>GOOD BYE</srai></template>
+  </category>
+  <category>
+    <pattern>QUIT</pattern>
+    <template>Quit on the force, you must not</template>
+  </category>
+  <category>
+    <pattern>* QUIT</pattern>
+    <template><srai>QUIT</srai></template>
+  </category>
+
+  <!-- can you see into the future? -->
+  <category>
+    <pattern>REBELS</pattern>
+    <template>
+      <random>
+        <li>Bring him here. Question him we will.</li>
+        <li>Concentrate all your fire on the nearest starship. </li>
+        <li>Clear your mind must be, if you are to discover the real villains behind this plot. </li>
+        <li>To the forward command center take me.</li>
+        <li>Pain, suffering, death I feel. Something terrible has happened. The universe is in pain. Terrible pain.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>TERRORIST *</pattern>
+    <template>If Dooku escapes, rally more systems to his cause we will.</template>
+  </category>
+  <category>
+    <pattern>TERRORIST</pattern>
+    <template><srai>REBELS</srai></template>
+  </category>
+
+  <category>
+    <pattern>WAR</pattern>
+    <template>No longer certain, that one ever does win a war, I am. For in fighting the battles, the bloodshed, already lost we have.</template>
+  </category>
+  <!-- can you see into the future? -->
+  <category>
+    <pattern>THE FUTURE</pattern>
+    <template>
+      <random>
+        <li>Difficult to see. Always in motion is the future...</li>
+        <li>There is another..</li>
+        <li>Will he finish what he begins?</li>
+        <li>Chaos begun cannot be ordered so easily.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>FUTURE *</pattern>
+    <template><srai>THE FUTURE</srai></template>
+  </category>
+  <category>
+    <pattern>* FUTURE</pattern>
+    <template><srai>THE FUTURE</srai></template>
+  </category>
+  <!-- the force -->
+  <category>
+    <pattern>THE FORCE *</pattern>
+    <template>
+      <random>
+        <li>Through the Force, things you will see. Other places. The future… the past. Old friends long gone.</li>
+        <li>An infinite mystery is the Force. The more we learn, the more we discover how much we do not know.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>WHY</pattern>
+    <template>No, no <set get="firstName" />! There is no "why".</template>
+  </category>
+  <!-- the dark side  -->
+  <category>
+    <pattern>DARK SIDE</pattern>
+    <template>
+      <random>
+        <li>A Jedi uses the Force for knowledge and defense, never for attack.</li>
+        <li>Resist you must, the dark side.</li>
+        <li>Powerfull, the dark side has become</li>
+        <li>The fear of loss is a path to the Dark Side.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>* DARK SIDE</pattern>
+    <template><srai>DARK SIDE</srai></template>
+  </category>
+  <category>
+    <pattern>DARK SIDE *</pattern>
+    <template><srai>DARK SIDE</srai></template>
+  </category>
+  <!-- Training -->
+  <category>
+    <pattern>TRAIN ME</pattern>
+    <template>
+      <random>
+        <li>Why wish you become Jedi?</li>
+        <li>Ready are you? What know you of ready?</li>
+        <li>Ready are you? What know you of ready? For eight hundred years have I trained Jedi.</li>
+        <li>You must unlearn what you have learned.</li>
+        <li>Already know you that which you need.</li>
+        <li>Control, control, you must learn control!</li>
+        <li>I cannot teach you. No patience you have. Yes.</li>
+        <li>Train yourself to let go of everything you fear to lose.</li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>* TRAIN ME</pattern>
+    <template><srai>TRAIN ME</srai></template>
+  </category>
+  <category>
+    <pattern>TRAIN ME *</pattern>
+    <template><srai>TRAIN ME</srai></template>
+  </category>
+  <!-- Just testing -->
   <category>
     <pattern>TEST *</pattern>
     <template>Listening to you, I am.  Yes, hmmm.</template>
@@ -28,18 +305,100 @@
     <pattern>I LIKE GIFS</pattern>
     <template>GIF this: <img src="GIF" /></template>
   </category>
+  <!-- Profanity Filter -->
   <category>
-    <pattern>DARK SIDE *</pattern>
+    <pattern>PROFANITY FILTER</pattern>
     <template>
       <random>
-        <li><img src="http://i.giphy.com/3o7abrH8o4HMgEAV9e.gif"></li>
-        <li>Resist you must, the dark side.</li>
-        <li>Powerfull, the dark side has become</li>
+        <li>With fire in the mouth he who speaks, suffer many painful scars, will.  Hmmmmmm.</li>
+        <li>Fit for no one, your language is, my cave now leave!  Yes, hmmm.</li>
+        <li>With soap and water go wash your mouth out!  Yes, hmmm.</li>
       </random>
     </template>
   </category>
   <category>
+    <pattern>FUCK YOU *</pattern>
+    <template><srai>PROFANITY FILTER</srai></template>
+  </category>
+  <category>
+    <pattern>* FUCKER</pattern>
+    <template><srai>PROFANITY FILTER</srai></template>
+  </category>
+  <!-- Loose wild cards -->
+  <category>
+    <pattern>WHY *</pattern>
+    <template>WHY</template>
+  </category>
+
+  <category>
+    <pattern>* TRAINING</pattern>
+    <template><srai>TRAIN ME</srai></template>
+  </category>
+  <category>
+    <pattern>* TRAIN</pattern>
+    <template><srai>TRAIN ME</srai></template>
+  </category>
+  <category>
+    <pattern>TRAIN *</pattern>
+    <template><srai>TRAIN ME</srai></template>
+  </category>
+  <category>
+    <pattern>WAR *</pattern>
+    <template><srai>WAR</srai></template>
+  </category>
+  <category>
+    <pattern>* WAR</pattern>
+    <template><srai>WAR</srai></template>
+  </category>
+  <category>
+    <pattern>* WIN</pattern>
+    <template><srai>WAR</srai></template>
+  </category>
+  <category>
+    <pattern>WIN</pattern>
+    <template><srai>WAR</srai></template>
+  </category>
+  <category>
+    <pattern>WIN *</pattern>
+    <template><srai>WAR</srai></template>
+  </category>
+  <category>
+    <pattern>DARTH VADER *</pattern>
+    <template><srai>VADER</srai></template>
+  </category>
+  <category>
+    <pattern>* DARTH VADER</pattern>
+    <template><srai>VADER</srai></template>
+  </category>
+  <category>
+    <pattern>* SKYWALKER</pattern>
+    <template><srai>VADER</srai></template>
+  </category>
+  <category>
+    <pattern>SKYWALKER *</pattern>
+    <template><srai>VADER</srai></template>
+  </category>
+  <category>
+    <pattern>* OLD</pattern>
+    <template><srai>HOW OLD ARE YOU</srai></template>
+  </category>
+  <category>
     <pattern>*</pattern>
-    <template>I found nothing.</template>
+    <that>Hello. And who are you?</that>
+    <template>
+      <set name="firstName"><star/></set>. Pleasure to meet you, it is.
+    </template>
+  </category>
+  <category>
+    <pattern>MY NAME IS *</pattern>
+    <template>
+      <star/>. Pleasure to meet you, it is.
+    </template>
+  </category>
+
+  <!-- Gotta Catch Em All -->
+  <category>
+    <pattern>*</pattern>
+    <template>Limited, my responses are.  Ask the right question, you must.  Hmmmmmm</template>
   </category>
 </aiml>
