@@ -5,12 +5,14 @@ footer {
   justify-content: center;
   width: 100%;
   padding: 10px;
+  z-index: 1000;
 
   button {
     display: flex;
     align-items: center;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 1px 2px 3px black;
 
     svg {
       width: 30px;

@@ -29,6 +29,10 @@
       border-bottom-left-radius: 2px;
     }
 
+    &.msg--tip > .msg {
+      background-color: $c-starwars-gold !important;
+    }
+
     &.msg__loading {
       display: none;
 
@@ -62,7 +66,6 @@
 
     .msg {
       display: flex;
-      align-items: center;
       max-width: 90%;
       margin: 0;
       padding: 10px 30px;
@@ -84,7 +87,7 @@
     }
 
     input[type="text"] {
-      width: 250px;
+      width: 200px;
       padding: 10px;
       line-height: 1.5;
       color: $c-starwars-gold;
