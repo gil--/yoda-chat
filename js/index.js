@@ -2,12 +2,15 @@ var fs = require('browserify-fs');
 aimlHigh = require('aiml-high');
 var interpreter = new aimlHigh({name:'Master Yoda', age:'900'}, 'Goodbye');
 var yodaAiml = require('../aiml/yoda.aiml.xml');
+var tipShown = false;
 interpreter.loadFromString(yodaAiml);
 
 $(document).ready(function () {
+    $('.yoda').addClass('js-show-yoda');
+    showResponse("Yoda. You seak Yoda.");
 
     $('#messageForm').submit(function( ) {
-      $('.yoda').addClass('js-show-yoda');
+      $('#message2Yoda').blur();
       var message2Yoda = $('#message2Yoda').val();
 
       $('.messageInput').addClass('js-msg-hide');
@@ -25,15 +28,9 @@ $(document).ready(function () {
     });
 
     function yodaBotCallback(answer, wildCardArray, input) {
-        console.log('DEBUG BOT AI:: ' + answer + ' | ' + wildCardArray + ' | ' + input);
-
-        if(answer == 'I found nothing.') {
-          yoda_answer = "Limited, my responses are.  Ask the right question, you must.  Hmmmmmm."; //replace with random Yoda quote
-
-          showResponse(yoda_answer);
-        } else {
-          translate2Yoda(answer);
-        }
+        //console.group('DEBUG BOT AI:: ' + answer + ' | ' + wildCardArray + ' | ' + input);
+        showResponse(answer);
+        //console.groupEnd();
     };
 
     function translate2Yoda(string) {
@@ -54,10 +51,21 @@ $(document).ready(function () {
       });
     }
 
-    function showResponse(data) {
+    function showResponse(data, tip) {
       $('.msg__loading').removeClass('js-msg-show');
       $('#message2Yoda').val('');
-      $('.messageInput').before( '<li class="messages__msg--reply animated fadeInUp"><blockquote class="msg">' + data + '</blockquote></li>' );
+
+      if(tip) {
+        $('.messageInput').before( '<li class="messages__msg--reply msg--tip animated fadeInUp"><blockquote class="msg">' + data + '</blockquote></li>' );
+      } else {
+        $('.messageInput').before( '<li class="messages__msg--reply animated fadeInUp"><blockquote class="msg">' + data + '</blockquote></li>' );
+      }
+
+      if(!tipShown && data === 'Limited, my responses are.  Ask the right question, you must.  Hmmmmmm') {
+        showResponse("Type /translate before your input to translate any phrase into Yoda speak", true);
+
+        tipShown = true;
+      }
 
       smoothScrollBottom();
 
