@@ -395,6 +395,28 @@
       <star/>. Pleasure to meet you, it is.
     </template>
   </category>
+  <category>
+    <pattern>GITHUB</pattern>
+    <template>Find me on <a href="https://github.com/gil--/yoda-chat">Github</a> you will.</template>
+  </category>
+  <category>
+    <pattern>PRODUCTHUNT</pattern>
+    <template>Do. Or do not. There is no try. Yessssss.</template>
+  </category>
+  <category>
+    <pattern>PRODUCT HUNT</pattern>
+    <template><srai>PRODUCTHUNT</srai></template>
+  </category>
+  <category>
+    <pattern>REDDIT</pattern>
+    <template>
+      <random>
+        <li>Hmmmmmm. These are not the upvotes you are looking for.</li>
+        <li>The force is strong with this one.</li>
+        <li>Difficult to see. To the font page with this one? Yessss.</li>
+      </random>
+    </template>
+  </category>
 
   <!-- Gotta Catch Em All -->
   <category>
