@@ -62,7 +62,7 @@ $(document).ready(function () {
       }
 
       if(!tipShown && data === 'Limited, my responses are.  Ask the right question, you must.  Hmmmmmm') {
-        showResponse("Type /translate before your input to translate any phrase into Yoda speak", true);
+        showResponse("Type <strong>/translate</strong> before your input to translate any phrase into Yoda speak", true);
 
         tipShown = true;
       }
